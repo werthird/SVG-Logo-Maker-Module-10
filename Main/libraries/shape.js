@@ -1,8 +1,8 @@
-// add requirements
+// REQUIREMENTS
 const index = require('../index');
 
 
-// make parent shapes class 
+// PARENT SHAPE CLASS 
 class Shape {
   constructor(text, textColor, shapeColor) {
     this.text = text;
@@ -11,5 +11,5 @@ class Shape {
   };
 };
 
-
+//EXPORT
 module.exports = Shape;

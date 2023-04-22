@@ -1,18 +1,22 @@
-// add requirements
+// REQUIREMENTS
 const index = require('../index');
 const Shape = require('./shape');
-const Square = require('./square');
+const Square = require('./rectangle');
 const Triangle = require('./triangle');
 const Circle = require('./circle');
 
 
+function buildSVG(shapeSVG) {
+  const { text, textColor } = shapeSVG;
 
-const renderShape = `
-  <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  let yCoord;
+  shapeSVG instanceof Triangle ? yCoord = 150: yCoord = 125;
 
-  <${data.shape} cx="150" cy="100" r="80" fill="green" />
+  let svg = '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
+  svg += shapeSVG.render();
+  svg += `<text x="150" y="${yCoord}" font-size="60" text-anchor="middle" fill="${textColor}">${text.toUpperCase()}</text>\n`;
+  svg += '</svg>';
+  return svg;
+};
 
-  <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
-
-  </svg>
-  `;
+module.exports = buildSVG;

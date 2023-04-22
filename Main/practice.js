@@ -14,6 +14,7 @@ const questions = [
     name: 'shapeColor',
     message: 'What color do you want to shape to be?',
   },
+  
 ];
 
 // Shape Class
@@ -45,30 +46,47 @@ class Square extends Shape {
   };
 };
 
+function buildSVG(shape) {
+  let svg = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">`;
+  svg += `<text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>`;
+  svg += shape.render();
+  svg += '</svg>';
+  return svg;
+  // makeSVGFile(svg);
+};
 
 // Function to initialize app
 function init() {
   inquirer
     .prompt(questions)
     .then(({ shape, shapeColor }) => {
-      console.log(shape);
-      console.log(shapeColor);
-      
       let shapeSVG;
 
       switch (shape) {
         case 'Circle':
           shapeSVG = new Circle(shapeColor);
-          console.log(shapeSVG);
           break;
         case 'Square':
           shapeSVG = new Square(shapeColor);
-          console.log(shapeSVG);
           break;
-      }
-
-      console.log(shapeSVG.render());
-    });
+      };
+      return shapeSVG;
+    })
+    .then((shapeSVG) => {
+      const svg = buildSVG(shapeSVG);
+      return svg;
+    })
+    .then((svg) => {
+      makeSVGFile(svg);
+    })
 };
+
+// Function to write README file
+function makeSVGFile(shapeSVG) {
+  fs.writeFile('./examples/logo.svg', shapeSVG, (err) =>
+    err ? console.log(err) :console.log('Success!')
+  );
+};
+
 
 init();

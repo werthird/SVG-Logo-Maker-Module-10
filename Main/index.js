@@ -5,6 +5,7 @@ const inquirer = require('inquirer');
 const Circle = require('./libraries/circle');
 const Square = require('./libraries/rectangle');
 const Triangle = require('./libraries/triangle');
+const buildSVG = require('./libraries/render');
 
 
 
@@ -53,16 +54,21 @@ function init() {
           shapeSVG = new Triangle(text, textColor, shapeColor);
           break;
       }
-      console.log(shapeSVG.render());
-
-      makeSVGFile(shapeSVG);
-    });
+      return shapeSVG;
+    })
+    .then((shapeSVG) => {
+      let svg = buildSVG(shapeSVG);
+      return svg;
+    })
+    .then((svg) => {
+      makeSVGFile(svg);
+    })
 };
 
 
 // Function to write README file
 function makeSVGFile(shapeSVG) {
-  fs.writeFile('./examples/logo.svg', shapeSVG.render(), (err) =>
+  fs.writeFile('./examples/logo.svg', shapeSVG, (err) =>
     err ? console.log(err) :console.log('Success!')
   );
 };
