@@ -69,6 +69,12 @@ build main inquirer function that takes in command-line prompt info
   - prompt for shape color
     - accepts color keyword or hexadecimal number
 
+          Questions to Ask:
+            - Enter up to three initials for your logo.
+            - What do you want your text color to be?
+            - What type of shape do you want your logo to be?
+            - What color do you want to shape to be?
+
 build a fs.createfile to create a svg file
   - name of file should be 'logo.svg'
   - svg file should be 300x200 pixel

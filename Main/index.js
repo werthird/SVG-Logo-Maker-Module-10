@@ -2,28 +2,36 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+const Circle = require('./libraries/circle');
+const Square = require('./libraries/rectangle');
+const Triangle = require('./libraries/triangle');
+
+
 
 // Array of Questions
 const questions = [
   {
     type: 'input',
+    name: 'text',
+    message: 'Enter up to three initials for your logo.',
+  },
+  {
+    type: 'input',
+    name: 'textColor',
+    message: 'What do you want your text color to be?',
+  },
+  {
+    type: 'list',
     name: 'shape',
-    message: 'What shape do you want your logo?',
-  }
+    message: 'What shape do you want your logo to be?',
+    choices: ['Circle', 'Square', 'Triangle']
+  },
+  {
+    type: 'input',
+    name: 'shapeColor',
+    message: 'What color do you want to shape to be?',
+  },
 ];
-
-
-// Function to generate svg formate
-function generateSVG(data) {
-  return `
-  <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-
-  <${data.shape} cx="150" cy="100" r="80" fill="green" />
-
-  <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
-
-  </svg>`
-};
 
 
 // Function to initialize app
@@ -31,15 +39,30 @@ function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      console.log(answers.shape);
-      makeSVGFile(answers);
+      const { text, textColor, shape, shapeColor } = answers;
+      let shapeSVG;
+
+      switch (shape) {
+        case 'Circle':
+          shapeSVG = new Circle(text, textColor, shapeColor);
+          break;
+        case 'Square':
+          shapeSVG = new Square(text, textColor, shapeColor);
+          break;
+        case 'Triangle':
+          shapeSVG = new Triangle(text, textColor, shapeColor);
+          break;
+      }
+      console.log(shapeSVG.render());
+
+      makeSVGFile(shapeSVG);
     });
 };
 
 
 // Function to write README file
-function makeSVGFile(answers) {
-  fs.writeFile('./examples/logo.svg', generateSVG(answers), (err) =>
+function makeSVGFile(shapeSVG) {
+  fs.writeFile('./examples/logo.svg', shapeSVG.render(), (err) =>
     err ? console.log(err) :console.log('Success!')
   );
 };
@@ -47,3 +70,4 @@ function makeSVGFile(answers) {
 
 // Call function to initialize app
 init();
+
