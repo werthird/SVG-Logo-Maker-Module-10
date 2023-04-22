@@ -1,0 +1,21 @@
+{
+  "name": "svg-generator",
+  "version": "1.0.0",
+  "description": "A command-line application that builds a simple SVG logo bases on the users preferences.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Devin Reilly",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
