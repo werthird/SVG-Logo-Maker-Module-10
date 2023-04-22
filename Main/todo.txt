@@ -1,7 +1,9 @@
 Needed Downloads:
     - Inquirer
     - Jest
-===================================================================
+
+===============================================================
+
 TASK:
   - Make sure that you remove dist from the .gitignore 
     file so that Git will track this folder and include it when you 
@@ -24,42 +26,33 @@ TASK:
   - You may need to add additional files in the lib folder for handling user input, 
     writing to a file, etc. Writing tests for these additional files is optional.
 
-===================================================================
+===============================================================
+
 FILE STRUCTURE:
 
-Example file structure:
-├── examples/           // Example svg file(s) created with the app
-├── lib/                // Folder for classes or functions
-    ├── shapes.js       // Exports `Triangle`, `Circle`, and `Square` classes
-    ├── shapes.test.js  // Jest tests for shapes
-    └── more...         // Additional files and tests
-├── .gitignore          // Indicates which folders and files Git should ignore
-├── index.js            // Runs the application using imports from lib/
-├── package.json
-└── README.md           // App description, link to video, setup and usage instructions     
 
-
-Create File Structure:
+Created File Structure:
 ├── Main
-  ├── examples          
+  ├── examples
   ├── libraries
     ├── shapes.js
     ├── shapes.test.js
   ├── index.js
-  ├── .gitignore
-  ├── package.json
   ├──
   ├──
   ├──
-├── README.md
+  ├──
+  ├──
+├── LICENSE
+└── README.md           // App description, link to video, setup and usage instructions  
 
-===================================================================
+===============================================================
 
 TESTS:
 
 build test to start making code
 
-===================================================================
+===============================================================
 
 BUILD SVG:
 
@@ -84,6 +77,17 @@ build a fs.createfile to create a svg file
 output text into command line after making svg file
   - text should be 'Generated logo.svg'
 
-===================================================================
+===============================================================
+
+CODE FLOW:
+inquirer
+  - Prompt for shape
+  - Send shape to svg generator
+    1. Run shape through 
+  - send svg format to writeFile 
 
 
+CODE FLOW - index.js 
+  - require fs and inquirer
+  - questions array
+  - 
