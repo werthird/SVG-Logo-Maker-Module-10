@@ -43,7 +43,9 @@ A simple command-line SVG Logo Generator. It allows the user to input their desi
 ## [Project Status](#project-status)
     MVP - Minimal Viable Product
 
-Follow this link to our [webpage]() to see one of the generated SVG Logos!
+Follow this link to our [webpage](https://werthird.github.io/SVG-Logo-Maker-Module-10/) to see one of the generated SVG Logos!
+
+<br />
 
 To get a look at the code used for this application, checkout our my <a href="https://github.com/werthird/Professional-README-Generator-Module-09/">GitHub Repo!</a> 
 
