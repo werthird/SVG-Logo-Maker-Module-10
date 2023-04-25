@@ -8,9 +8,7 @@ class Square extends Shape {
     super(text, textColor, shapeColor)
   };
   render() {
-    return `
-      <rect x="90" y="45" width="120" height="120" fill="${this.shapeColor}" />
-    `;
+    return `<rect x="90" y="45" width="120" height="120" fill="${this.shapeColor}" />`;
   }
 };
 

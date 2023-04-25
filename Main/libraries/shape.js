@@ -1,6 +1,3 @@
-// REQUIREMENTS
-const index = require('../index');
-
 
 // PARENT SHAPE CLASS 
 class Shape {

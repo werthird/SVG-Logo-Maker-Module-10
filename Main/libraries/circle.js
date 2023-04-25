@@ -8,9 +8,7 @@ class Circle extends Shape {
     super(text, textColor, shapeColor)
   };
   render() {
-    return `
-      <circle cx="150" cy="105" r="80" fill="${this.shapeColor}" />
-    `;
+    return `<circle cx="150" cy="105" r="80" fill="${this.shapeColor}" />`;
   }
 };
 

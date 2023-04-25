@@ -15,6 +15,13 @@ const questions = [
     type: 'input',
     name: 'text',
     message: 'Enter up to three initials for your logo.',
+    validate: function(input) {
+      if (input.length <= 3) {
+        return true;
+      } else {
+        return 'Please enter up to three characters.';
+      }
+    }
   },
   {
     type: 'input',
