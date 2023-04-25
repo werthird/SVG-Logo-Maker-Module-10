@@ -43,6 +43,8 @@ A simple command-line SVG Logo Generator. It allows the user to input their desi
 ## [Project Status](#project-status)
     MVP - Minimal Viable Product
 
+Follow this link to our [webpage]() to see one of the generated SVG Logos!
+
 To get a look at the code used for this application, checkout our my <a href="https://github.com/werthird/Professional-README-Generator-Module-09/">GitHub Repo!</a> 
 
 <br />
@@ -82,7 +84,7 @@ This is a command-line application that will take you through a series of prompt
 
 <br />
 
-<img style="text-align: center; border: solid 2px white; width:100%;height:100%" src="./Assets/Images/svg-logo-generator-screenshot.jpg" alt="README Generator Screenshot showing command-line prompts"/>
+<img style="text-align: center; border: solid 2px white; width:100%;height:100%" src="./Assets/Images/svg-logo-generator-screenshot.jpg" alt="SVG Logo Maker Screenshot showing command-line prompts and example SVG"/>
 
 <br />
 
@@ -106,7 +108,7 @@ To test this application, we have provided a few tests for the shapes that can b
 	```
 3. There are three test. Each should pass and the resulting screen should look like this:
 
-<img style="text-align: center; border: solid 2px white; width:50%;height:100%" src="./Assets/Images/svg-logo-generator-test-screenshot.jpg" alt="README Generator Screenshot showing command-line prompts"/>
+<img style="text-align: center; border: solid 2px white; width:50%;height:100%" src="./Assets/Images/svg-logo-generator-test-screenshot.jpg" alt="SVG Logo Maker Screenshot showing command-line passed tests"/>
 
 <br />
 
